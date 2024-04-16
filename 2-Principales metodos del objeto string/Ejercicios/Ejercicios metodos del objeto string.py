@@ -74,3 +74,36 @@ impresion_impares = '|'.join(impares)
 print('Ejercicio anterior con impares: ', impresion_impares)
 print('Obteniendo lista original de pares: ', impresion_pares.split('|')) # Obteniendo la lista original partiendo de la impresion almacenada
 print('Obteniendo lista original de impares: ', impresion_impares.split('|'))
+print('_______________________________________________________')
+
+
+# Ejercicio numero 7
+'''Dada una expresión matemática “2 * 15 = 30”, cambiar el asterisco por 
+una “x” y el signo “=” por la cadena “es igual a” utilizando métodos de 
+cadenas. **Puede que precises utilizar dos veces el mismo método.'''
+print('Ejercicio numero 7')
+print('Estado Original de la cadena a imprimir : ', "2 * 15 = 30")
+print('Cadena editada : ', "2 * 15 = 30".replace('*', 'X').replace('=', 'es igual a')) # Editando la cadena con replace()
+print('_______________________________________________________')
+
+
+
+# Ejercicio Numero 8 
+'''Dada la expresión “{1} * {2} = {0}”.format(15, #, #), reemplaza los 
+numerales para que la cadena sea una expresión válida.'''
+print('Ejercicio Numero 8')
+print('Aqui viene una multiplicacion : ', '{1} * {2} = {0}'.format(15, 5, 3)) # Lo que esta en las llaves se remplaza con los argumentos de format()
+print('{0} que se {1}, se lo lleva la {2}'.format('camaron', 'duerme', 'corriente'))
+print('_______________________________________________________')
+
+
+# Ejercicio Numero 9
+'''Codifica la cadena “El veloz murciélago hindú comía feliz cardillo y kiwi” 
+a una secuencia de bytes con utf-16, guarda el valor en una variable y luego 
+vuelve a decodificarla para imprimir la cadena.'''
+print('Ejercicio numero 9')
+print('Codificando una cadena : ')
+cadenaCodificada = 'El veloz murciélago hindú comía feliz cardillo y kiwi'.encode('utf-16') # Se codifica la cadena
+print('Cadena codificada con utf-16 : ', cadenaCodificada)
+cadenaDecodificada = cadenaCodificada.decode('utf-16') # se decodifica la cadena
+print('Cadena decodificada : ', cadenaDecodificada)
