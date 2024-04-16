@@ -82,7 +82,6 @@ print(frase)
 frase.reverse() # Esto invierte los elementos de la lista 'frase'
 print(frase)
 # ['y', 'El', 'kiwi', 'feliz', 'comía', 'hindú', 'veloz', 'cardillo', 'murciélago']
-
 '''Copy'''
 copyFrase = frase.copy()
 print(copyFrase)
