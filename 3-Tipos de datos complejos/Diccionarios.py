@@ -36,3 +36,39 @@ for k,v in paises_america.items(): # Se obtiene el valor de cada clave en 'k' y 
 # norte ['EEUU', 'México', 'Canadá']
 # centro ['Panamá', 'Honduras', 'Costa Rica', 'Guatemala']
 # sur ['Argentina', 'Brasil', 'Chile', 'Uruguay']
+
+
+'''Reversed'''
+for k,v in reversed(paises_america.items()): # Se imprime el valor de 'k' y 'v' de manera inversa a como fue creado el dict
+    print(k,v)
+# sur ['Argentina', 'Brasil', 'Chile', 'Uruguay']
+# centro ['Panamá', 'Honduras', 'Costa Rica', 'Guatemala']
+# norte ['EEUU', 'México', 'Canadá']
+
+'''Pop'''
+paises_america.pop("norte") # Se borra el valor que tenga la clave 'norte'
+print(paises_america)
+# {'centro': ['Panamá', 'Honduras', 'Costa Rica', 'Guatemala'], 'sur': ['Argentina', 'Brasil', 'Chile', 'Uruguay']}
+mensaje = paises_america.pop("norte", "No existe la clave") # Si no encientra la clave, manda el argumento por default (KeyError si no se especifica)
+print(mensaje) # La salida anterior se guarda en 'mensaje', para ver que es lo que regresa el metodo anterior
+# No existe la clave
+
+'''Pop item'''
+mensaje = paises_america.popitem() # Se elimina el ultimo elemento (El metodo regresa el valor eliminado, se guarda en 'mensaje para verlo')
+print(mensaje)
+# ('sur', ['Argentina', 'Brasil', 'Chile', 'Uruguay'])
+print(paises_america) # Ya que se elimino el ultimo de dos elemenos, solo queda uno
+# {'centro': ['Panamá', 'Honduras', 'Costa Rica', 'Guatemala']}
+
+'''Set default'''
+mensaje = paises_america.setdefault('centro', 'algun pais') # Se intenta agregar 'centro', pero si existe regresa el valor que de hecho tiene
+print(mensaje)
+# ['Panamá', 'Honduras', 'Costa Rica', 'Guatemala']
+paises_america.setdefault('sur', ['Argentina', 'Brasil', 'Chile', 'Uruguay']) # Si no existe, lo agrega al diccionario
+print(paises_america)
+# {'centro': ['Panamá', 'Honduras', 'Costa Rica', 'Guatemala'], 'sur': ['Argentina', 'Brasil', 'Chile', 'Uruguay']}
+
+'''Clear'''
+paises_america.clear() # Elimina los elementos del dict 'paises_america'
+print(paises_america)
+# {}
