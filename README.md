@@ -16,4 +16,4 @@ Cada modulo de esta clase tiene su propia carpeta con los ejercicios que se real
   8. Ficheros                                   
   9. Bases de datos con SQLITE3                 
   
-**Al final del curso, se realiza un projecto final, que tambien sera incluido en este repositorio**
+**Al final del curso, se realiza un proyecto final, que tambien sera incluido en este repositorio**
