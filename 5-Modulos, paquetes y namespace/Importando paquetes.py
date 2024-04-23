@@ -20,3 +20,12 @@ print(Operacion(2, 3, 4, operacion="suma"))
 # Imprimimos el producto de unos numeros usando la funcion que importamos del paquete de modulos
 print(Operacion(2, 3, 4, operacion="producto"))
 # 24
+
+
+# Tambien se pueden hacer importaciones del tipo :
+
+'''Importando paquete'''
+import OperacionesPaq
+'''importando un modulo de un paquete'''
+import OperacionesPaq.MetodosOperaciones
+'''De eta misma manera, se puede acceder a sub paquetes dentro de otros paquetes'''
