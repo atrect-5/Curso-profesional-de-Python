@@ -17,7 +17,7 @@ for ruta in sys.path:
 '''Podemos ver que el primero es la carpeta en la que nos encontramos actualmente'''
 print('________________________________________')
 
-# Se agrega a la lista de rutas la ruta en donde se encuentra nuestro proyecto con el modulo que queremos importar
+# Se agrega a la lista de rutas la ruta en donde se encuentra nuestro modulo que queremos importar
 sys.path.insert(1, r'C:\Users\alex1\School Files\Curso profesional de python\Operaciones')
 
 # Se busca imprimir la lista de los lugares de busqueda cuando importas un modulo
