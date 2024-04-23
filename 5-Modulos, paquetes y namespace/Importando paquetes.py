@@ -1,6 +1,6 @@
 
 # Se importa el modulo 'sys'
-import sys 
+import sys
 
 # Se agrega a la lista de rutas la ruta en donde se encuentra nuestro paquete con el modulo que queremos importar
 sys.path.insert(1, r'C:\Users\alex1\School Files\Curso profesional de python')  # No incluimos nuestro paquete en la ruta
@@ -27,5 +27,13 @@ print(Operacion(2, 3, 4, operacion="producto"))
 '''Importando paquete'''
 import OperacionesPaq
 '''importando un modulo de un paquete'''
-import OperacionesPaq.MetodosOperaciones
+import OperacionesPaq.MetodosOperaciones as MO
 '''De eta misma manera, se puede acceder a sub paquetes dentro de otros paquetes'''
+
+# Accediendo a una funcion del modulo
+print(MO.SumaArgs(1,2,3,4))
+# 10
+
+# Accediendo a una funcion de un modulo ubicado en un paquete
+print(OperacionesPaq.MetodosOperaciones.Producto(1,2,3,4))
+# 24
