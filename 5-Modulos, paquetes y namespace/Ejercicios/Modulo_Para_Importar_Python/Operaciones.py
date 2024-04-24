@@ -46,7 +46,8 @@ def Division(*dividendos:list) -> float:
     Parameters:
         list : dividendos : Lista de los numeros que se van dividir
     Returns:
-        float : Division de una lista de numeros'''
+        float : Division de una lista de numeros
+        str : en caso de que haya un 0 en la lista'''
     total = dividendos[0]**2  # Se inicia con el valor del primer elemento, y ya que es el primer numero que se le va a dividir, se compensa elevando al cuadrado
     for numero in dividendos:
           if numero == 0:
