@@ -41,7 +41,7 @@ def Producto(*factores:list) -> float:
     return total
 
 
-def Divicion(*dividendos:list) -> float:
+def Division(*dividendos:list) -> float:
     '''Esta funcion devuelve la division de una lista de numeros
     Parameters:
         list : dividendos : Lista de los numeros que se van dividir
@@ -53,6 +53,3 @@ def Divicion(*dividendos:list) -> float:
                return "No es posible dividir, hay un cero en la lista de numeros"
           total /= numero
     return total
-print('Probando funcionamiento de funciones...')
-print('Numeros: 15, 5 y 2')
-print('Suma : ', Suma(15, 5, 2), '\nResta : ', Resta(15, 5, 2), '\nProducto : ', Producto(15, 5, 2), '\nDivicion : ', Divicion(15, 5, 2))
