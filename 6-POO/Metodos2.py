@@ -19,6 +19,8 @@ p1 = Punto(1,2)
 p2 = Punto(3,4) # Asignamos las coordenadas a los puntos
 
 # Imprimimos si de llamar al metodo de la clase de estas 2 maneras es la mismo 
+'''El primer parametro que se manda (en la segunda manera) es el objeto principal,
+De no recibir 'self' el metodo, estaras enviando mas parametros de los que vas a recibir'''
 print( p1.distancia(p2) == Punto.distancia(p1, p2) ) 
 # True
 
@@ -28,11 +30,11 @@ print( p1.distancia(p2) == Punto.distancia(p1, p2) )
 class Dot:
     pass
 
-# Se crea una funcion 'setear_x', que asgna un valor
+# Se crea una funcion global 'setear_x'
 def setear_x(self, valor):
     self.x = valor
 
-# Se agrega el atributo 'setear_x' a la clase 'Dot', y se le indica que se le asignara la funcion que creamos previamente
+# Se agrega el metodo 'setear_x' a la clase 'Dot', y se le indica que se le asignara la funcion que creamos previamente (Ahora pertenecera a la clase) 
 Dot.setear_x = setear_x
 
 # Para comprobar, creamos una instancia de nuestra clase y usamos el metodo 'setear_x' para ver su funcionamiento
