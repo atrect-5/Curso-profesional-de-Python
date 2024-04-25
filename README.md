@@ -10,8 +10,8 @@ Cada modulo de esta clase tiene su propia carpeta con los ejercicios que se real
   2. Principales metodos del objeto string      :white_check_mark:
   3. Tipos de datos complejos                   :white_check_mark:
   4. Funciones definidas por el ususario        :white_check_mark:
-  5. Modulos, paquetes y namespaces             :clock2:
-  6. Programacion orientada a objetos           
+  5. Modulos, paquetes y namespaces             :white_check_mark:
+  6. Programacion orientada a objetos           :clock2:
   7. Conversion de tipos                        
   8. Ficheros                                   
   9. Bases de datos con SQLITE3                 
