@@ -8,11 +8,12 @@ class Triangulo:
  
     '''El decorado property nos permite usar metodos como si se trataran de atributos'''
     @property 
-    def base(self): # Se llama a esta funcion cuando se require obtener el valor del atributo 'base' de un objeto (Getter)
+    def base(self): # Se llama a esta funcion cuando se require obtener el valor del atributo 'base' de un objeto (Getter) (cuando se le asigna un valor al atributo)
         return self._base
  
     @base.setter 
-    def base(self, base): # Se llama a esta funcion cuando se require asignar el valor del atributo 'base' de un objeto (Setter), (Por eso recibe 'base' como parametro')
+    # Se llama a esta funcion cuando se require asignar el valor del atributo 'base' de un objeto (Setter), (Por eso recibe 'base' como parametro'), (Cuando se lee un dato del atributo)
+    def base(self, base): 
         if base < 0: # Valida que el valor que se guradara no se un numero negativo
             raise ValueError("La base no puede ser un número negativo") 
         self._base = base
