@@ -10,6 +10,7 @@ class Punto:
 
     @property # Hacemos de la funcion un @property para poder acceder a esta como un atributo y no como un metodo
     def ubicacion(self): 
+        print('Coordenada X : ', self.x, '| Coordenada Y : ', self.y)
         if (self.x >= 0): 
             if (self.y >= 0):
                 print('Cuadrante superior derecho (+,+)')
@@ -26,6 +27,7 @@ class Punto:
                 print('Cuadrante inferior izquierdo (-,-)')
                 print('  |  \n--+--\n0 |  ')
 
-# Recibimos los valores de la coordenadas por medio de 'input' y los asignamos a los atributos 'x' y 'y'
-p = Punto(float(input('Ingresa la coordenada del eje x : ')),float(input('Ingresa la coordenada del eje y : ')))
-p.ubicacion # Podemos apreciar que al acceder al metodo 'ubicacio()', lo hacemos como si se tratase de un atributo
+if __name__ == '__main__':
+    # Recibimos los valores de la coordenadas por medio de 'input' y los asignamos a los atributos 'x' y 'y'
+    p = Punto(float(input('Ingresa la coordenada del eje x : ')),float(input('Ingresa la coordenada del eje y : ')))
+    p.ubicacion # Podemos apreciar que al acceder al metodo 'ubicacio()', lo hacemos como si se tratase de un atributo
