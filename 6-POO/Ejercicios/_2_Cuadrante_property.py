@@ -24,7 +24,7 @@ class Punto:
 
             elif (self.y < 0):
                 print('Cuadrante inferior derecho (+,-)')
-                wigth = '—|'+'—'*(self.x)
+                wigth = '—|'+'—'*(self.x*2)
                 print(wigth)
                 for h in range(self.y*-1 +1 ):
                     if (h==self.y*-1-1):
