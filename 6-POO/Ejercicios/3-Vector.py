@@ -34,5 +34,5 @@ vector.puntoA.ubicacion
 print('Punto B: ')
 vector.puntoB.ubicacion
 
-print('Vector resultante de los puntos recibidos AB: ', vector.ab)
+print('Vector resultante AB: ', vector.ab)
 # Esta version del programa dibuja un plano cartesiano para ubicar mejor donde se encuentran los puntos
