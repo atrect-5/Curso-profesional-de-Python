@@ -13,21 +13,21 @@ class Punto:
         if (self.x > 0): # Si 'x' es positivo, se ubicara del lado derecho del plano.
             if (self.y > 0): # Si 'y' es positivo, se ubicara del lado superior del plano
                 print('Cuadrante superior derecho (+,+)')
-                for h in reversed(range(self.y +1 )):
+                for h in reversed(range(self.y +1 )): # Imprime una representacion visual del punto con dichas coordenadas 
                     if (h==self.y-1):
-                        wigth=' |'+' '*(self.x-1)+'0'
+                        wigth=' |'+' '*(self.x*2-1)+'0'
                         print(wigth)
                     else:
                         print(' |')
-                wigth = '—|'+'—'*(self.x)
+                wigth = '—|'+'—'*(self.x*2)
                 print(wigth)
             elif (self.y < 0): # Si 'y' es negativo, se ubicara del lado inferior del plano
                 print('Cuadrante inferior derecho (+,-)')
-                wigth = '—|'+'—'*(self.x)
+                wigth = '—|'+'—'*(self.x*2)
                 print(wigth)
                 for h in range(self.y*-1 +1 ):
                     if (h==self.y*-1-1):
-                        wigth=' |'+' '*(self.x-1)+'0'
+                        wigth=' |'+' '*(self.x*2-1)+'0'
                         print(wigth)
                     else:
                         print(' |')
@@ -41,22 +41,22 @@ class Punto:
                 print('Cuadrante superior izquierdo (-,+)')
                 for h in reversed(range(self.y +1 )):
                     if (h==self.y-1):
-                        wigth='0'+' '*(self.x*-1-1)+'|'
+                        wigth='0'+' '*(self.x*-2-1)+'|'
                         print(wigth)
                     else:
-                        print(" "*(self.x*(-1))+'|')
-                wigth = '—'*(self.x*-1)+'|—'
+                        print(" "*(self.x*(-2))+'|')
+                wigth = '—'*(self.x*-2)+'|—'
                 print(wigth)
             elif (self.y < 0):
                 print('Cuadrante inferior izquierdo (-,-)')
-                wigth = '—'*(self.x*-1)+'|—'
+                wigth = '—'*(self.x*-2)+'|—'
                 print(wigth)
                 for h in range(self.y*-1+1 ):
                     if (h==self.y*-1-1):
-                        wigth='0'+' '*(self.x*-1-1)+'|'
+                        wigth='0'+' '*(self.x*-2-1)+'|'
                         print(wigth)
                     else:
-                        print(" "*(self.x*(-1))+'|')
+                        print(" "*(self.x*(-2))+'|')
             else:
                 print('Eje \'x\' negativo (-,0)')
                 wigth = '0'+'—'*(self.x*-1-1)+'|—'
