@@ -1,5 +1,7 @@
 # Alejandro Gonzalez : Ejercicios propuestos
 
+# Esta version del programa dibuja un plano cartesiano para ubicar mejor donde se encuentra el punto
+
 # Ejercicio numero 2
 '''Modifique el método anterior para convertirlo en una propiedad (@property).'''
 # Copiamos la clase anterior para convertir el metodo en @property

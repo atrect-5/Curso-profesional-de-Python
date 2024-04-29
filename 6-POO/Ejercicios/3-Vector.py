@@ -1,14 +1,17 @@
 # Alejandro Gonzalez : Ejercicios propuestos
 
 # Ejercicio Numero 3 
-''' Cree una clase Vector que reciba 2 instancias de la clase Punto y devuelva el vector resultante. Deberá poseer 3 atributos:
+''' Cree una clase Vector que reciba 2 instancias de la clase Punto y 
+devuelva el vector resultante. Deberá poseer 3 atributos:
 a: será el punto 1.
 b: será el punto 2
-c: @property ab: será una tupla del vector resultante que indicará la diferencia (distancia) entre los puntos recibidos.'''
+c: @property ab: será una tupla del vector resultante que indicará la 
+diferencia (distancia) entre los puntos recibidos.'''
 from _2_Cuadrante_property import Punto # importamos nuestra clase 'Punto' para usarla en este ejercicio
 # Definimos nuestra clase 'Vector'
 class Vector:
-    def __init__(self, puntoA, puntoB) -> None: # Se inicializa el vector, donde se guardan las coordenadas de 2 puntos
+    # Se inicializa el vector, donde se guardan las coordenadas de 2 puntos
+    def __init__(self, puntoA, puntoB) -> None: 
         self.puntoA = puntoA
         self.puntoB = puntoB
 
@@ -32,3 +35,4 @@ print('Punto B: ')
 vector.puntoB.ubicacion
 
 print('Vector resultante de los puntos recibidos AB: ', vector.ab)
+# Esta version del programa dibuja un plano cartesiano para ubicar mejor donde se encuentran los puntos
