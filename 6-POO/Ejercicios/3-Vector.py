@@ -12,19 +12,23 @@ class Vector:
         self.puntoA = puntoA
         self.puntoB = puntoB
 
-    @property # en este metodo se calcula la distancia entre los dos puntos
+    @property # en este metodo se calcula el vector resultante de los 2 puntos (Vector AB = B-A)
     def ab(self):
-        return(self.puntoA.x - self.puntoB.x, self.puntoA.y - self.puntoB.y)
+        return(self.puntoB.x - self.puntoA.x, self.puntoB.y - self.puntoA.y)
 
 # Declaramos 2 instancias de 'Punto', cada una con sus coordenadas
+print('Punto A:')
 punto_a = Punto(float(input('Ingresa la coordenada del eje x : ')),float(input('Ingresa la coordenada del eje y : ')))
+print('Punto B:')
 punto_b = Punto(float(input('Ingresa la coordenada del eje x : ')),float(input('Ingresa la coordenada del eje y : ')))
 
 # Declaramos una instancia de 'Vector', donde se guarda la ubicacion de los 2 puntos
 vector = Vector(punto_a,punto_b)
 
 # Vemos que se han guardado exitosamente
+print('Punto A: ')
 vector.puntoA.ubicacion
+print('Punto B: ')
 vector.puntoB.ubicacion
 
-print('Vector resultante de los puntos recibidos : ', vector.ab)
+print('Vector resultante de los puntos recibidos AB: ', vector.ab)
