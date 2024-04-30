@@ -83,9 +83,6 @@ if __name__ == '__main__':
     seguir = 'y'
     while seguir=='y':
         guerrero1.atacar(guerrero2)
-        guerrero1.atacar(guerrero2)
-        guerrero1.atacar(guerrero2)
-        guerrero1.atacar(guerrero2)
         guerrero1.status
         guerrero2.status
         seguir=input('Seguir? -> ')
