@@ -18,15 +18,15 @@ class Guerrero: # Definimos la clase y las variables de clase 'vida' y 'estado_a
             print('El Guerrero', self.name, 'no puede atacar, ya que esta muerto')
             return
         # Se agrega el estado en el que esta el guerrero (Atacando o defendiendo) (Ej.9)
-        self.estado()
+        self.set_estado()
         # Si el atacante esta en modo de 'defensa', no podra atacar (Ej. 12.d)
-        if self.estado == 'defensa':
+        if self.estado_actual == 'defensa':
             print('El Guerrero', self.name, 'no puede atacar, con un estado de defensa')
             return
-        another.estado()
+        another.set_estado()
         # Solo se modificaran los valores si el arma tiene un estado mayor a 2 y aun sirve (Ej. 7)
         if self.estado_arma >= 2: 
-            if another.estado == 'ataque':
+            if another.estado_actual == 'ataque':
                 another.vida -= 20 # Si el que es atacado tambien esta en modo de ataque, su vida se reduce en 20 (Ej. 12.b)
             else:
                 another.estado_escudo -= 5 # Si el estado del atacado es modo defensa, el estado de su escudo se reduce en 5 (Ej. 12.a)
@@ -44,16 +44,16 @@ class Guerrero: # Definimos la clase y las variables de clase 'vida' y 'estado_a
             return False
         
     # Convertir el atributo 'estado' en una propiedad que no deje defender cuando el estado del escudo es 0 (Ej. 11)
-    def estado(self):   
+    def set_estado(self):   
         name = 'Indica el estado del Guerrero '+self.name+' : '
         while True:
             estado=input(name) 
             if (self.estado_escudo == 0 and estado == 'defensa'):
                 print('No se puede poner estado de defensa sin escudo')
-                self.estado = 'ataque'
+                self.estado_actual = 'ataque'
                 break
             elif (estado == 'ataque' or estado == 'defensa'):
-                self.estado = estado
+                self.estado_actual = estado
                 break
             else:
                 print('El estado debe ser \'ataque\' o \'defensa\'')
@@ -66,7 +66,7 @@ class Guerrero: # Definimos la clase y las variables de clase 'vida' y 'estado_a
     # Nos muestra si el estado del guerrero (Atacando o Defendiendo) (Yo)
     @property
     def actividad(self):
-        if self.estado == 'ataque':
+        if self.estado_actual == 'ataque':
             estado = "Atacando..."
         else:
             estado = "Defendiendo..."
@@ -82,6 +82,9 @@ if __name__ == '__main__':
 
     seguir = 'y'
     while seguir=='y':
+        guerrero1.atacar(guerrero2)
+        guerrero1.atacar(guerrero2)
+        guerrero1.atacar(guerrero2)
         guerrero1.atacar(guerrero2)
         guerrero1.status
         guerrero2.status
