@@ -15,5 +15,7 @@ Cada modulo de esta clase tiene su propia carpeta con los ejercicios que se real
   7. Conversion de tipos                        
   8. Ficheros                                   
   9. Bases de datos con SQLITE3                 
-  
+
 **Al final del curso, se realiza un proyecto final, que tambien sera incluido en este repositorio**
+
+****Las carpetas 'Operaciones' y 'Operacionespaq' contienen modulos que se importan en '5-Modulos, paquetes y namespaces'****
