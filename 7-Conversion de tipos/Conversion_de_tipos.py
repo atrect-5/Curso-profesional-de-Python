@@ -34,7 +34,7 @@ if __name__ == '__main__':
     print("Área:", t.area) # Se imprime el area del triangulo
     # Área: 10.0
 
-    # str(). (Devuelve la representacion informal de un objeto)
+    # uso comun de str(). (Devuelve la representacion informal de un objeto)
     '''Cuando se llama al metodo 'print()', tambien se hace uso de la funcion 'str()' para convertir el tipo de dato 
     que queremos imprimir en una cadena de texto. Es decir que estas dos maneras de imprimir en pantalla son equivalentes '''
     print("Triángulo:", t) # Imprime la instancia de Triangulo 't'
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     # Uso str(): <__main__.Triangulo object at 0x0000026CA6C6B790>
 
 
-    # repr(). (Devuelve la representacion formal de un objeto)
+    # uso comun de repr(). (Devuelve la representacion formal de un objeto) 
     '''Si no definimos el método, en vez de dar un error, Python genera una representación automática, 
     indicando el nombre de la clase y la dirección en memoria del objeto en cuestión.'''
     print(repr(t))
