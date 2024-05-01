@@ -49,3 +49,12 @@ for ing,v in ranking_ingredientes.items():
 # Al ultimo, señalamos cual es nuestro ingrediente más usado
 print(f'El ingredente mas utilizado en nuestros pedidos fue: {ranking_ingredientes.most_common(1)[0][0]}, \
 Que se uso en : {ranking_ingredientes.most_common(1)[0][1]} pizas') # Debido a que devuelve una lista de tuplas, debemos aceder a ese elemento por varios '[]'
+
+
+# Creamos un objeto 'defaultdict' Con variables 'int' por defecto
+ranking_ingredientes_default = collections.defaultdict(int)
+ranking_ingredientes_default.update(ranking_ingredientes) # Guardamos los datos obtenidos en 'ranking_ingredientes'
+
+print('Veces que se uso Pepperoni: ',ranking_ingredientes_default["Pepperoni"])
+# Al no encontrar la clave 'Pepinillos', la crea y tambien su valor, ya que es 'int' por defecto el valor sera 0
+print('Veces que se uso Pepinillos: ', ranking_ingredientes_default['Pepinillos'])
