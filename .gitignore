@@ -1,26 +1,8 @@
 Notas importantes sobre python.txt
-1-Estructura y elementos del lenguaje/Ejercicios/screenshots Estructura y elementos del lenguaje/
 1-Estructura y elementos del lenguaje/Ejercicios/probando soluciones.py
-2-Principales metodos del objeto string/Notas importantes para el examen.txt
-2-Principales metodos del objeto string/Ejercicios/screenshots Principales metodos del objeto string/
-3-Tipos de datos complejos/Notas para el examen.txt
-3-Tipos de datos complejos/Ejercicios/screenshots Tipos de datos complejos
-4-Funciones definidas por el usuario/Ejercicios/screenshots Funciones definidas por el usuario/
-4-Funciones definidas por el usuario/Notas para el examen.txt
-5-Modulos, paquetes y namespace/Notas para el examen.txt
-5-Modulos, paquetes y namespace/Ejercicios/screenshots Modulos, paquetes y namespace/
+
 .vscode/
-Operaciones/__pycache__/
-OperacionesPaq/__pycache__/
-5-Modulos, paquetes y namespace/Ejercicios/Modulo_Para_Importar_Python/__pycache__/
-6-POO/Ejercicios/screenshots POO/
-6-POO/Notas importantes para el examen.txt
-6-POO/__pycache__/
-6-POO/Ejercicios Opcionales/screenshots POO/
-6-POO/Ejercicios/__pycache__/
-6-POO/Ejercicios Opcionales/__pycache__/
-7-Conversion de tipos/Ejercicios/screenshots Conversion de tipos/
-7-Conversion de tipos/Notas importantes para el examen.txt
-7-Conversion de tipos/__pycache__/
-8-Ficheros/Notas importantes para el examen.txt
-8-Ficheros/__pycache__/
+
+**/__pycache__/
+**/Notas importantes para el examen.txt
+**/screenshots*/
