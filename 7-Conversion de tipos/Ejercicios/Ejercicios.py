@@ -34,6 +34,18 @@ pedidos = [
 # Agregamos los pedidos a la lista 'pizzas' como objetos de 'Pizza'
 for pzz in pedidos:
     pizza=Pizza(tamano=pzz[0], precio=pzz[1], ingredientes=pzz[2])
-    pizzas.append(pizza) # Se gurada la lista de las pizzas que hay
+    pizzas.append(pizza) # Se guarda la lista de las pizzas que hay
 
-print(pizzas)
+
+# Creamos la lista de los ingredientes usados para las pizzas
+# For anidado, en el que se recorren las pizzas de la lista y luego los ingredientes de dicha pizza, se cuentan y se guardan en 'ranking_ingredientes'
+ranking_ingredientes = collections.Counter(ingrediente for pizza in pizzas for ingrediente in pizza.ingredientes)
+
+# Imprimimos los ingredientes que se usaron en las pizzas y cuantas veces
+print('Los ingredientes que se usaron en los pedidos son: ')
+for ing,v in ranking_ingredientes.items():
+    print(f'Ing. : {ing}'.ljust(20),' -> Usado : ', v, 'veces')
+
+# Al ultimo, señalamos cual es nuestro ingrediente más usado
+print(f'El ingredente mas utilizado en nuestros pedidos fue: {ranking_ingredientes.most_common(1)[0][0]}, \
+Que se uso en : {ranking_ingredientes.most_common(1)[0][1]} pizas') # Debido a que devuelve una lista de tuplas, debemos aceder a ese elemento por varios '[]'
