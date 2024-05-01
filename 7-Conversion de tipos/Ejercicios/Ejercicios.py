@@ -19,3 +19,21 @@ Pizza = collections.namedtuple('Pizza', 'tamano,precio,ingredientes')
 
 # Creamos una lista vacia 'pizzas'
 pizzas = []
+
+# Agregamos la lista 'pedidos' predefinida para los ejercicios
+pedidos = [
+    ["XL", 100, ["Queso", "Jamón"]],
+    ["XL", 120, ["Queso", "Pepperoni"]],
+    ["M", 80, ["Queso", "Piña"]],
+    ["S", 60, ["Queso"]],
+    ["M", 70, ["Pepperoni"]],
+    ["L", 90, ["Queso", "Pepperoni"]],
+    ["L", 80, ["Queso", "Tomates"]],
+]
+
+# Agregamos los pedidos a la lista 'pizzas' como objetos de 'Pizza'
+for pzz in pedidos:
+    pizza=Pizza(tamano=pzz[0], precio=pzz[1], ingredientes=pzz[2])
+    pizzas.append(pizza) # Se gurada la lista de las pizzas que hay
+
+print(pizzas)
