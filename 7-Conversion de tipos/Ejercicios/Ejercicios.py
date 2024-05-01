@@ -58,3 +58,31 @@ ranking_ingredientes_default.update(ranking_ingredientes) # Guardamos los datos 
 print('Veces que se uso Pepperoni: ',ranking_ingredientes_default["Pepperoni"])
 # Al no encontrar la clave 'Pepinillos', la crea y tambien su valor, ya que es 'int' por defecto el valor sera 0
 print('Veces que se uso Pepinillos: ', ranking_ingredientes_default['Pepinillos'])
+
+# Esta funcion es para indicar el tipo de dato que va a almacenar el diccionario 'precios_por_tamano'
+''' Debido a que 'defaultdict' debe recibir como parametro (al parecer) un objeto que se pueda llama (funcion en este caso)
+Tuve que  hacer esta funcion que solo regresara el tipo de dato que se va a almacenar en dicho 'defaultdict' '''
+def inicializar_defaultdict():
+    return {'min': float('inf'), 'max': float('-inf')}
+
+# Se crea el 'defaultdict', que contendra como clave el tamaño y como valor un diccionario con las claves 'min' y 'max' con los precios minimos y maximos respectivamente
+precios_por_tamano = collections.defaultdict(inicializar_defaultdict)
+
+# Estas variables guardaran el valor mas alto o bajo entre el guardado en el diccionario y el nuevo valor que encuentran
+precio_minimo = float('inf')
+precio_maximo = float('-inf')
+ 
+# Recorremos la lista de pizzas para obtener los precios de estas
+for pizza in pizzas:
+    # Guardamos el diccionario anidado (valor) de la clave (tamano) / {'min': 0, 'max':0}
+    precios = precios_por_tamano[pizza.tamano] 
+    # Guardamos en nuestraas variables precio menor y mayor entre los precios que tenemos almacenados y los nuevos precios que encontramos
+    precio_minimo = min(precios['min'], pizza.precio)
+    precio_maximo = max(precios['max'], pizza.precio)
+    # Guardamos el precio mayor o menor en nuestro diccionario anidado / {'min': 0, 'max':0}
+    precios_por_tamano.update({pizza.tamano:{'min':precio_minimo, 'max':precio_maximo}})
+
+# Se imprimen los precios mayores y menores en pantalla.
+print('Precios por tamaño:\nTamaño | min | max ')
+for tamano,precios in precios_por_tamano.items():
+    print(f'{tamano}'.center(7),f'{precios["min"]}'.center(5),f'{precios["max"]}'.center(5))
