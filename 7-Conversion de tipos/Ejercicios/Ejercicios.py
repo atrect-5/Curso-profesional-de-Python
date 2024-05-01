@@ -59,9 +59,9 @@ print('Veces que se uso Pepperoni: ',ranking_ingredientes_default["Pepperoni"])
 # Al no encontrar la clave 'Pepinillos', la crea y tambien su valor, ya que es 'int' por defecto el valor sera 0
 print('Veces que se uso Pepinillos: ', ranking_ingredientes_default['Pepinillos'])
 
-# Esta funcion es para indicar el tipo de dato que va a almacenar el diccionario 'precios_por_tamano'
-''' Debido a que 'defaultdict' debe recibir como parametro (al parecer) un objeto que se pueda llama (funcion en este caso)
-Tuve que  hacer esta funcion que solo regresara el tipo de dato que se va a almacenar en dicho 'defaultdict' '''
+# Esta funcion es para indicar el tipo de dato que va a almacenar el diccionario 'precios_por_tamano' como valor
+''' Debido a que 'defaultdict' debe recibir como parametro (al parecer) un objeto que se pueda llamar (funcion en este caso)
+Hice esta funcion que solo regresara la estructura del valor que se va a almacenar en dicho 'defaultdict' '''
 def inicializar_defaultdict():
     return {'min': float('inf'), 'max': float('-inf')}
 
