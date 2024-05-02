@@ -5,3 +5,5 @@
 cadena = 'centrado'
 separadores = int(input('Cantidad de caracteres donde se centrara la palabra : '))
 print((cadena.rjust(separadores+len(cadena), '>')).ljust((2*separadores)+len(cadena), '<'))
+# Cantidad de caracteres donde se centrara la palabra : 7
+# >>>>>>>centrado<<<<<<<
