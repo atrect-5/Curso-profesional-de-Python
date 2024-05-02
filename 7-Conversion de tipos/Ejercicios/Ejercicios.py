@@ -68,19 +68,15 @@ def inicializar_defaultdict():
 # Se crea el 'defaultdict', que contendra como clave el tamaño y como valor un diccionario con las claves 'min' y 'max' con los precios minimos y maximos respectivamente
 precios_por_tamano = collections.defaultdict(inicializar_defaultdict)
 
-# Estas variables guardaran el valor mas alto o bajo entre el guardado en el diccionario y el nuevo valor que encuentran
-precio_minimo = float('inf')
-precio_maximo = float('-inf')
  
 # Recorremos la lista de pizzas para obtener los precios de estas
 for pizza in pizzas:
-    # Guardamos el diccionario anidado (valor) de la clave (tamano) / {'min': 0, 'max':0}
+    # Guardamos el vslor (diccionario anidado) de la clave (tamano) / {'min': 0, 'max':0}
     precios = precios_por_tamano[pizza.tamano] 
-    # Guardamos en nuestraas variables precio menor y mayor entre los precios que tenemos almacenados y los nuevos precios que encontramos
-    precio_minimo = min(precios['min'], pizza.precio)
-    precio_maximo = max(precios['max'], pizza.precio)
-    # Guardamos el precio mayor o menor en nuestro diccionario anidado / {'min': 0, 'max':0}
-    precios_por_tamano.update({pizza.tamano:{'min':precio_minimo, 'max':precio_maximo}})
+    # Guardamos el precio menor y mayor entre los precios que tenemos almacenados y los nuevos precios que encontramos
+    precios['min'] = min(precios['min'], pizza.precio)
+    precios['max'] = max(precios['max'], pizza.precio)
+
 
 # Se imprimen los precios mayores y menores en pantalla.
 print('Precios por tamaño:\nTamaño | min | max ')
