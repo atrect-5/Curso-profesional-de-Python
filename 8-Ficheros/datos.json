@@ -1,0 +1,19 @@
+{
+    "personas": [
+        {
+            "nombre": "Lucas",
+            "apellido": "Lucyk",
+            "pais": "Argentina"
+        },
+        {
+            "nombre": "Alejandro",
+            "apellido": "Gonzalez",
+            "pais": "México"
+        },
+        {
+            "nombre": "Ana",
+            "apellido": "Perez",
+            "pais": "Uruguay"
+        }
+    ]
+}
