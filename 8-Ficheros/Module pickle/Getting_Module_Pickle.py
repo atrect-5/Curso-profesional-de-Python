@@ -5,7 +5,7 @@ picklePath = path.dirname(__file__)+"\personas.pickle"
 
 import persona, pickle
 
-# Abrimos el archivo 'personas.pickle' para leer el contenido
+# Abrimos el archivo 'personas.pickle' para leer el contenido (En modo binario)
 with open(picklePath, 'rb') as file:
     # Se obtiene el contenido del archivo .pickle (El diccionario con la lista de las personas que guardamos)
     data = pickle.load(file)
