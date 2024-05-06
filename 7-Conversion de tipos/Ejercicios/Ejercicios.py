@@ -60,8 +60,8 @@ print('Veces que se uso Pepperoni: ',ranking_ingredientes_default["Pepperoni"])
 print('Veces que se uso Pepinillos: ', ranking_ingredientes_default['Pepinillos'])
 
 # Esta funcion es para indicar el tipo de dato que va a almacenar el diccionario 'precios_por_tamano' como valor
-''' Debido a que 'defaultdict' debe recibir como parametro (al parecer) un objeto que se pueda llamar (funcion en este caso)
-Hice esta funcion que solo regresara la estructura del valor que se va a almacenar en dicho 'defaultdict' '''
+''' Debido a que 'defaultdict' debe recibir como parametro un objeto que se pueda llamar (funcion en este caso)
+Se hizo esta funcion que solo regresara la estructura del valor que se va a almacenar en dicho 'defaultdict' '''
 def inicializar_defaultdict():
     return {'min': float('inf'), 'max': float('-inf')}
 
