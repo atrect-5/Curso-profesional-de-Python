@@ -72,8 +72,8 @@ print(data)
 import json
 # Definimos la ruta para el archivo 'pacientes.json'
 pacienteJsonPath = path.dirname(__file__)+'\pacientes.json'
-# Definimos la funcion para serializar las instancias de 'Paciente'
 
 if __name__=='__main__':
     with open(pacienteJsonPath, 'w', encoding='utf-8') as pacienteJson:
-        json.dump(data, pacienteJson, ensure_ascii=False, indent=4)
+        # Creamos y guardamos los datos de los pacientes en un archivo json
+        json.dump(data, pacienteJson, ensure_ascii=False, indent=4) 
