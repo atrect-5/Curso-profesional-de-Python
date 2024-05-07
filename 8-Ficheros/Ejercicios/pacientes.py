@@ -65,5 +65,15 @@ if __name__=='__main__':
     with open(pacientePicklePath, 'wb') as pacientePickle:
         # Escribimos 'data' en el archivo pickle
         pickle.dump(data, pacientePickle)
-    
-    print(data)
+
+# Ejercicio Numero 4 
+'''4.- Extienda el funcionamiento anterior para serializar los objetos con el módulo json en un archivo “personas.json”.'''
+print(data)
+import json
+# Definimos la ruta para el archivo 'pacientes.json'
+pacienteJsonPath = path.dirname(__file__)+'\pacientes.json'
+# Definimos la funcion para serializar las instancias de 'Paciente'
+
+if __name__=='__main__':
+    with open(pacienteJsonPath, 'w', encoding='utf-8') as pacienteJson:
+        json.dump(data, pacienteJson, ensure_ascii=False, indent=4)
