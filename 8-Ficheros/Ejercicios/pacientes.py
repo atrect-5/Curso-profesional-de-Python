@@ -68,7 +68,6 @@ if __name__=='__main__':
 
 # Ejercicio Numero 4 
 '''4.- Extienda el funcionamiento anterior para serializar los objetos con el módulo json en un archivo “personas.json”.'''
-print(data)
 import json
 # Definimos la ruta para el archivo 'pacientes.json'
 pacienteJsonPath = path.dirname(__file__)+'\pacientes.json'
