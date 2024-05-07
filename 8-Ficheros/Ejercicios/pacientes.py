@@ -55,6 +55,15 @@ if __name__=='__main__':
             # Guardamos los datos de todos los paceintes en un diccionario donde el valor es el id de cada paciente
             data[str(paciente.id)] = paciente 
         
-        # Imprimimos en pantalla los datos guardados en nuestro diccionario
-        for k,v in data.items():
-            print(f'Clave = {k}', ' | Valor: ', v)
+# Ejercicio Numero 3
+'''3.- Extienda el código del ejercicio anterior para serializar los objetos del diccionario “data” 
+con el módulo pickle. **Guarde el contenido como “pacientes.pickle”.'''
+import pickle # Importamos el modulo pickle
+pacientePicklePath = path.dirname(__file__)+'\pacientes.pickle' # Creamos la direccion para que se guarde el archivo pickle
+if __name__=='__main__':
+    # Abrimos el archivo en modo escritura, indicando que si no existe lo va a crear y va a interpretar el contenido como binario
+    with open(pacientePicklePath, 'wb') as pacientePickle:
+        # Escribimos 'data' en el archivo pickle
+        pickle.dump(data, pacientePickle)
+    
+    print(data)
