@@ -29,5 +29,13 @@ registros = cursor.fetchall()
 # (1, 'Juan', 'Perez')
 # (3, 'Manuel', 'Rodriguez')
 
+
+# Tambein podemos ver cuales son las tablas que hemos creado (sqlite_master es la tabla maestra de SQLite3 que almacena todas las tablas que creamos)
+cursor.execute('SELECT name from sqlite_master where type= "table"')
+registros = cursor.fetchall()
+ 
+[print(registro) for registro in registros]
+# ('pacientes',)
+
 cursor.close()
 conexion.close()
