@@ -1,6 +1,6 @@
 # Alejandro Gonzalez
 
-# Ejercio Numero 1
+#region Ejercio Numero 1
 '''Cree una función que reciba el nombre y los campos de una 
 base de datos sqlite y cree la misma en caso de que no existan. 
 ** El primer campo será la PK y los demás serán campos de texto.'''
@@ -34,8 +34,8 @@ def create_Database(nameDB, nameTable, campos):
     # Cerramos la conexion a la base de datos 
     cursor.close()
     conexion.close()
-
-# Ejercicio numero 2
+#endregion
+#region Ejercicio numero 2
 '''Cree una función que reciba el nombre, la tabla, y los campos 
 de una base de datos y devuelva los registros de la misma como una lista.
 la función debe recibir, de manera opcional, el criterio de filtro para obtener los registros.'''
@@ -61,16 +61,16 @@ def read_Database(nameDB, nameTable, campos:list, campoFiltro, Filtro):
     cursor.close()
     conexion.close()
     return registros
-
+#endregion
 if __name__=='__main__':
-    #region Pedimos los nombres de la base de datos y la tabla
+    #region Pedimos los nombres de la base de datos y la tabla. Y la accion que desea realizar
     nameDB = input('Cual es el nombre de su base de datos?: -> ')
     nameTable = input('Cual el nombre de la tabla: -> ')
-    #endregion
-    # Pedimos al usuario que escoja una accion
+    
     print('Que desea hacer con la base de datos?')
     opcion = input('(C)-Crear Tabla\n(R)-Leer Registros de una tabla\n-> ')
-
+    #endregion
+    
     if (opcion=='C'):
         campos = []
         camposCount = int(input('Cuantos campos tendra la base de datos? (El primero sera \'PRIMARY KEY\'): ->'))
