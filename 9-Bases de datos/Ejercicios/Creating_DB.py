@@ -35,13 +35,61 @@ def create_Database(nameDB, nameTable, campos):
     cursor.close()
     conexion.close()
 
-if __name__=='__main__':
-    # Pedimos los datos al usuario para la base de datos
-    nameDB = input('Elija el nombre de su base de datos: -> ')
-    nameTable = input('Elija el nombre de la tabla que quiere crear: -> ')
-    campos = []
-    camposCount = int(input('Cuantos campos tendra la base de datos? (El primero sera \'PRIMARY KEY\'): ->'))
-    for i in range(camposCount):
-        campos.append(input(f'Ingrese el campo {i+1}: -> '))
+# Ejercicio numero 2
+'''Cree una función que reciba el nombre, la tabla, y los campos 
+de una base de datos y devuelva los registros de la misma como una lista.
+la función debe recibir, de manera opcional, el criterio de filtro para obtener los registros.'''
 
-    create_Database(nameDB, nameTable, campos)
+def read_Database(nameDB, nameTable, campos:list, campoFiltro, Filtro):
+    print('\nConectando a la base de datos...') 
+    # Creamos las conexiones
+    dbPath = path.dirname(__file__)+f'\{nameDB}.sqlite3'
+    conexion = sqlite3.connect(dbPath)
+    cursor = conexion.cursor()
+
+    # Definimos las partes de la query
+    sqlGetCampos = ', '.join(campos)
+    sql = f'SELECT {sqlGetCampos} FROM {nameTable}'
+    if campoFiltro:
+        sqlWhere = f' WHERE {campoFiltro}="{Filtro}"'
+        sql += sqlWhere
+
+    cursor.execute(sql)
+    registros = cursor.fetchall()
+
+    # Cerramos la conexion a la base de datos 
+    cursor.close()
+    conexion.close()
+    return registros
+
+if __name__=='__main__':
+    #region Pedimos los nombres de la base de datos y la tabla
+    nameDB = input('Cual es el nombre de su base de datos?: -> ')
+    nameTable = input('Cual el nombre de la tabla: -> ')
+    #endregion
+    # Pedimos al usuario que escoja una accion
+    print('Que desea hacer con la base de datos?')
+    opcion = input('(C)-Crear Tabla\n(R)-Leer Registros de una tabla\n-> ')
+
+    if (opcion=='C'):
+        campos = []
+        camposCount = int(input('Cuantos campos tendra la base de datos? (El primero sera \'PRIMARY KEY\'): ->'))
+        for i in range(camposCount):
+            campos.append(input(f'Ingrese el campo {i+1}: -> '))
+        create_Database(nameDB, nameTable, campos)
+    elif(opcion=='R'):
+        # Tomaos los datos restantes del usuario (campos que quiere obtener y el filtro que quiere aplicar)
+        campos = []
+        camposCount = input('Cantidad de campos quiere obtener de la base de datos(* para todos): -> ')
+        if camposCount != '*':
+            for i in range(int(camposCount)):
+                campos.append(input(f'Ingrese el campo {i+1}: -> '))
+        else:
+            campos.append(camposCount)
+        Filtro = ''
+        campoFiltro = input('Que campo quiere filtrar (Enter si no quiere filtrar): -> ')
+        if campoFiltro:
+            Filtro = input(f'Solo buscar en los registros que {campoFiltro} = ? : -> ')
+        # Llamamos a la funcion de leer registros y obtenemos la lista de registros leidos
+        registros = read_Database(nameDB, nameTable, campos, campoFiltro, Filtro)
+        [print(registro) for registro in registros]
