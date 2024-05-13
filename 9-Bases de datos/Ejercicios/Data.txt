@@ -1,0 +1,5 @@
+id;nombre_completo;apellido_paterno;apellido_materno;anyo_nacimiento
+4;Salvador;Garcia;Enriquez;2004
+5;Samuel;Estoncio;Carrillo;2002
+6;Angel;Rodriguez;Lopez;2001
+7;Elena;Gonzalez;Gonzalez;2003

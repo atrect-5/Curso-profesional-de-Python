@@ -62,13 +62,55 @@ def read_Database(nameDB, nameTable, campos:list, campoFiltro, Filtro):
     conexion.close()
     return registros
 #endregion
+# Ejercicio Numero 3
+'''Cree una función que reciba el nombre de un archivo csv con campos separados 
+por punto y coma y el nombre y tabla de una base de datos. Con ellos, debe insertar 
+todos los registros del archivo en la base de datos y tabla indicada. Lo campos 
+de la base de datos estarán en la primera fila del archivo.'''
+
+import csv # Importamos la libreria csv
+def read_csv(nameDB, nameTable, archivoCSV):
+    #region Conectando a la base de datos...
+    print('\nConectando a la base de datos...') 
+    # Creamos las conexiones
+    dbPath = path.dirname(__file__)+f'\{nameDB}.sqlite3'
+    conexion = sqlite3.connect(dbPath)
+    cursor = conexion.cursor()
+    #endregion
+    print('Accediendo al archivo csv...')
+    # Creamos la ruta al archivo csv
+    csvPath = path.dirname(__file__)+f'\{archivoCSV}'
+
+    # Abrimos el archivo indicado
+    with open(csvPath, encoding="utf-8") as csvFile:
+        print(f'Los datos obtenidos del archivo {archivoCSV} fueron:\n', csvFile.read())
+        csvFile.seek(0) # Reiniciamos el puntero del archivo despues de leer
+
+        print('\nEscribiendo datos en la base de datos...\n')
+        # Obtenemos los datos del archivo en un 'DictReader'
+        csvDictReader = csv.DictReader(csvFile, delimiter=';')
+
+        # Iteramos en las filas leidas del archivo con 'DictReader'
+        for fila in csvDictReader:
+            # Definimos la sentencia sql y ejecutamos
+            sql = f'INSERT INTO {nameTable} VALUES({fila["id"]}, "{fila["nombre_completo"]}", "{fila["apellido_paterno"]}", "{fila["apellido_materno"]}", "{fila["anyo_nacimiento"]}")'
+            cursor.execute(sql)
+
+    # Confirmamos los cambios a la base de datos
+    conexion.commit()
+
+    #region Cerramos la conexion a la base de datos 
+    cursor.close()
+    conexion.close()
+    #endregion
+
 if __name__=='__main__':
-    #region Pedimos los nombres de la base de datos y la tabla. Y la accion que desea realizar
+    #region Pedimos los nombres de la base de datos, la tabla y la accion que desea realizar
     nameDB = input('Cual es el nombre de su base de datos?: -> ')
     nameTable = input('Cual el nombre de la tabla: -> ')
     
     print('Que desea hacer con la base de datos?')
-    opcion = input('(C)-Crear Tabla\n(R)-Leer Registros de una tabla\n-> ')
+    opcion = input('(C)-Crear Tabla\n(R)-Leer Registros de una tabla\n(IC)-Insertar datos desde archivo csv\n-> ')
     #endregion
     
     if (opcion=='C'):
@@ -93,3 +135,6 @@ if __name__=='__main__':
         # Llamamos a la funcion de leer registros y obtenemos la lista de registros leidos
         registros = read_Database(nameDB, nameTable, campos, campoFiltro, Filtro)
         [print(registro) for registro in registros]
+    elif(opcion=='IC'):
+        archivoCSV = input('Cual es el nombre del archivo csv?: -> ')
+        read_csv(nameDB, nameTable, archivoCSV)
