@@ -14,8 +14,8 @@ Cada modulo de esta clase tiene su propia carpeta con los ejercicios que se real
   6. Programacion orientada a objetos           :white_check_mark:
   7. Conversion de tipos                        :white_check_mark:
   8. Ficheros                                   :white_check_mark:
-  9. Bases de datos con SQLITE3                 :clock2:
+  9. Bases de datos con SQLITE3                 :white_check_mark:
 
-**Al final del curso, se realiza un proyecto final, que tambien sera incluido en este repositorio**
+**Al final del curso, se realiza un proyecto final, que tambien sera incluido en este repositorio** :clock2:
 
 **Las carpetas 'Operaciones' y 'Operacionespaq' contienen modulos que se importan en '5-Modulos, paquetes y namespaces'**
