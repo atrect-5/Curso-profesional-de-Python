@@ -62,7 +62,7 @@ def read_Database(nameDB, nameTable, campos:list, campoFiltro, Filtro):
     conexion.close()
     return registros
 #endregion
-# Ejercicio Numero 3
+#region Ejercicio Numero 3
 '''Cree una función que reciba el nombre de un archivo csv con campos separados 
 por punto y coma y el nombre y tabla de una base de datos. Con ellos, debe insertar 
 todos los registros del archivo en la base de datos y tabla indicada. Lo campos 
@@ -103,6 +103,41 @@ def read_csv(nameDB, nameTable, archivoCSV):
     cursor.close()
     conexion.close()
     #endregion
+#endregion
+
+# Ejercicio Numero 4
+'''Cree una función que reciba el nombre y una tabla de una base de datos y una cadena
+“condición”. Con dicha condición, deberá eliminar los registros que coincidan con este criterio.
+Opcionalmente, debe recibir una cadena adicional como último parámetro. En caso de recibir 
+la misma, en vez de eliminar los registros que coincidan con la condición, 
+debe asignar el valor que contiene dicha cadena.'''
+
+def update_delete(nameDB, nameTable, filtro, dataUpdate):
+    #region Conectando a la base de datos...
+    print('\nConectando a la base de datos...\n') 
+    # Creamos las conexiones
+    dbPath = path.dirname(__file__)+f'\{nameDB}.sqlite3'
+    conexion = sqlite3.connect(dbPath)
+    cursor = conexion.cursor()
+    #endregion
+
+    # Si recibimos la segunda cadena, hacemos un UPDATE, si no un DELETE
+    if dataUpdate:
+        print(f'Actualizando registros con {dataUpdate} donde {filtro}...')
+        sql = f'UPDATE {nameTable} SET {dataUpdate} WHERE {filtro}'
+    else:
+        print(f'Eliminando registros donde {filtro}...')
+        sql = f'DELETE FROM {nameTable} WHERE {filtro}'
+
+    # Ejecutamos la sentencia y confirmamos los cambios
+    cursor.execute(sql)
+    print("Registros afectados:", cursor.rowcount, '\n')
+    conexion.commit()
+
+    #region Cerramos la conexion a la base de datos 
+    cursor.close()
+    conexion.close()
+    #endregion
 
 if __name__=='__main__':
     #region Pedimos los nombres de la base de datos, la tabla y la accion que desea realizar
@@ -110,7 +145,7 @@ if __name__=='__main__':
     nameTable = input('Cual el nombre de la tabla: -> ')
     
     print('Que desea hacer con la base de datos?')
-    opcion = input('(C)-Crear Tabla\n(R)-Leer Registros de una tabla\n(IC)-Insertar datos desde archivo csv\n-> ')
+    opcion = input('(C)-Crear Tabla\n(R)-Leer Registros de una tabla\n(IC)-Insertar datos desde archivo csv\n(UD)-Actualizar o eliminar registros\n-> ')
     #endregion
     
     if (opcion=='C'):
@@ -138,3 +173,12 @@ if __name__=='__main__':
     elif(opcion=='IC'):
         archivoCSV = input('Cual es el nombre del archivo csv?: -> ')
         read_csv(nameDB, nameTable, archivoCSV)
+    elif(opcion=='UD'):
+        # Obtenemos los filtros del usuario (Donde se va a actualizar/eliminar y que campo se va a actualizar)
+        campoUpDel = input('Que campo quiere Filtrar (para actualizar o eliminar)?\n-> ')
+        filtro = campoUpDel + ' = "' + input(f'Actualizar o eliminar donde {campoUpDel} = ?\n-> ') + '"'
+        dataUpdate = ''
+        campoUpdate = input(f'Que campo quiere actualizar? (Enter para eliminar registros donde {filtro})\n-> ')
+        if campoUpdate:
+            dataUpdate = campoUpdate + ' = "' + input(f'Con que informacion desea actualizar los registros del campo {campoUpdate}?\n-> ') + '"'
+        update_delete(nameDB, nameTable, filtro, dataUpdate)
