@@ -104,7 +104,6 @@ def read_csv(nameDB, nameTable, archivoCSV):
     conexion.close()
     #endregion
 #endregion
-
 #region Ejercicio Numero 4
 '''Cree una función que reciba el nombre y una tabla de una base de datos y una cadena
 “condición”. Con dicha condición, deberá eliminar los registros que coincidan con este criterio.
