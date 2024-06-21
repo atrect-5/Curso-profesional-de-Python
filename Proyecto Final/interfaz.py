@@ -82,8 +82,9 @@ class ListView:
  
         self.btn_detail = ttk.Button(self.window, text="Detalle", command=self.event_detail)
         self.btn_detail.grid(row=10, column=0, columnspan=2, sticky="ew", pady=5, padx=5)
- 
-        self.day_events = ce.Evento.day_events(day=dt.datetime.strptime(day, "%x"))
+
+        # Se debe ajustar el formato correctamente para poder visualizarlo
+        self.day_events = ce.Evento.day_events(day=dt.datetime.strptime(day, "%d/%m/%y").strftime("%Y-%m-%d"))
  
         # Una vez creada la ventana, busco y agrego los eventos del día
         self.insert_events()
