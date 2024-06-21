@@ -123,7 +123,7 @@ class EventoForm:
         labels = [('Titulo', 0), ('Asistentes', 2), ('Inicio', 4), ('Fin', 5), ('Ubicacion', 6), ('Descripcion', 8)]
 
         for k, v in labels:
-            lbl = ttk.Label(self.window, text=k, width=10)
+            lbl = ttk.Label(self.window, text=k, width=12)
             lbl.grid(row=v, column=0, sticky="w", pady=5, padx=5)
 
         # Si crea un lvl del valor recibido como evento (id)
