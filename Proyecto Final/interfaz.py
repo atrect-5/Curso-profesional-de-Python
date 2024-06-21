@@ -84,7 +84,7 @@ class ListView:
         self.btn_detail.grid(row=10, column=0, columnspan=2, sticky="ew", pady=5, padx=5)
 
         # Se debe ajustar el formato correctamente para poder visualizarlo
-        self.day_events = ce.Evento.day_events(day=dt.datetime.strptime(day, "%d/%m/%y").strftime("%Y-%m-%d"))
+        self.day_events = ce.Evento.day_events(day=dt.datetime.strptime(day, "%m/%d/%y").strftime("%Y-%m-%d"))
  
         # Una vez creada la ventana, busco y agrego los eventos del día
         self.insert_events()
