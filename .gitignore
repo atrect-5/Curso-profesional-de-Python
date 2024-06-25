@@ -6,3 +6,5 @@ Notas importantes sobre python.txt
 **/__pycache__/
 **/Notas importantes para el examen.txt
 **/screenshots*/
+
+**/*.sqlite3
